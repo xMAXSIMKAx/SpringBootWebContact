@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS party
 INSERT INTO
 	party (image, name, description)
 VALUES
-	('22.jpg', 'Azure beach', 'Good drinks, Nice party.'),
-	('11.jpg', 'Sunny Club', 'Great food, amazing feels .'),
-	('33.jpg', 'Fish farm', 'Very interesting vibe.');
+	('22.jpg', '(', 'Good drinks, Nice party.'),
+	('11.jpg', '----', 'Great food, amazing feels .'),
+	('33.jpg', ')', 'Very interesting vibe.');
 
 

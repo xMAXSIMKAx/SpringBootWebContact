@@ -4,6 +4,7 @@ See: https://stackoverflow.com/questions/38730992/thymleaf-for-spring-in-intelli
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Contact Club</title>
+
     <link rel='shortcut icon' th:href="@{icons/favicon.ico}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +23,12 @@ See: https://stackoverflow.com/questions/38730992/thymleaf-for-spring-in-intelli
     <div class="d-flex justify-content-center align-items-center text-white p-3"
          style="background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); font-size: 32px;">
         <i class="bi-sun-fill" style="font-size: 3rem; color: #f1f73e;"></i>&nbsp;Contact Club
+        <form action="/login" method="get">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        <form action="/register" method="get">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
     </div>
     <div>
         <img th:src="@{images/party.jpg}" class="img-fluid" alt="image">
