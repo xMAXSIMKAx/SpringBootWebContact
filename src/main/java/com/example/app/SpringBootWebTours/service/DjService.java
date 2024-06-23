@@ -13,9 +13,9 @@ import java.util.List;
 public class DjService {
 
     @Autowired
-    DjRepository repository;
+    private DjRepository djRepository;
 
     public List<dj> getDj() throws URISyntaxException, IOException {
-        return repository.getDj();
+        return djRepository.getDj();
     }
 }

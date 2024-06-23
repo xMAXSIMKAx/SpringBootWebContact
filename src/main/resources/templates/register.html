@@ -2,16 +2,83 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Registration Page</title>
     <!-- Підключаємо необхідні ресурси (Bootstrap, CSS, і т.д.) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+            color: #000; /* Чорний колір тексту */
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        /* Обведення для всіх текстових полів і кнопки */
+        .form-control,
+        .btn-primary {
+            outline: 2px solid #5c32a8; /* Обведення для текстових полів та кнопки */
+        }
+        .form-control:focus {
+            outline: 2px solid #5c32a8; /* Обведення для фокусованого текстового поля */
+        }
+        .btn-primary {
+            background-color: #5c32a8;
+            border-color: #5c32a8;
+        }
+        .btn-primary:hover {
+            background-color: #4c268c;
+            border-color: #4c268c;
+        }
+    </style>
 </head>
 <body>
-<h2>Registration Page</h2>
-<form action="/register" method="post">
-    <!-- Форма для реєстрації, з полями для ім'я користувача та пароля -->
-    <input type="text" name="username" placeholder="Username"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-    <button type="submit">Register</button>
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-container">
+                <h2 class="mb-4 text-center">Registration Form</h2>
+                <form action="/register" method="post">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nickname" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter your username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Підключаємо необхідні скрипти (Bootstrap, JS, і т.д.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>

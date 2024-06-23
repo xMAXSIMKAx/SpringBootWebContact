@@ -26,21 +26,15 @@ public class DjRepository {
 
     public List<dj> getDj() throws IOException {
 
-        File jsonFile = new ClassPathResource(Constants.URL_FILES +
-                Constants.FILE_RESORTS).getFile();
+        File jsonFile = new ClassPathResource(Constants.URL_FILES + Constants.FILE_RESORTS).getFile();
         String path = jsonFile.getAbsolutePath();
 
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Paths.get(path));
-            list = gson.fromJson(reader,
-                    new TypeToken<List<dj>>() {}.getType());
+            list = gson.fromJson(reader, new TypeToken<List<dj>>() {}.getType());
             reader.close();
-            return list.stream()
-                    .map(tour -> new dj(tour.getId(),
-                            Constants.URL_IMAGES + tour.getImg(),
-                            tour.getDescr()))
-                    .toList();
+            return list;
         } catch (Exception ex) {
             LOGGER.info("DjRepository msg: " + ex.getMessage());
             // Якщо помилка, повертаємо порожню колекцію
